@@ -30,6 +30,13 @@ class _SplashViewBodyState extends State<SplashViewBody>
   }
 
   @override
+  void dispose() {
+    //to avoid memory leakage
+    animationController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
