@@ -1,6 +1,5 @@
 import 'package:bookly/Core/Utils/styles.dart';
 import 'package:flutter/material.dart';
-
 import '../../../../../Core/Utils/AppAssets.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
@@ -29,6 +28,7 @@ class BestSellerListViewItem extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
                   width: MediaQuery.of(context).size.width /2,
@@ -38,6 +38,19 @@ class BestSellerListViewItem extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     style: Styles.textStyle20N,
                   ),
+                ),
+                const SizedBox(height: 3,),
+                const Text(
+                  'J.K. Rowling',
+                  style: Styles.textStyle14,
+                ),
+                const SizedBox(height: 3,),
+                Row(
+                  children: const [
+                    Text('19.99 €',
+                    style: Styles.textStyle20,
+                    ),
+                  ],
                 ),
               ],
             ),
