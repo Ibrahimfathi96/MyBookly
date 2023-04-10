@@ -1,3 +1,4 @@
+import 'package:bookly/Core/Utils/styles.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../Core/Utils/AppAssets.dart';
@@ -18,8 +19,27 @@ class BestSellerListViewItem extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   color: Colors.white,
-                  image: const DecorationImage(image: AssetImage(AppAssets.kTestImage2),fit: BoxFit.cover)
+                  image: const DecorationImage(
+                      image: AssetImage(AppAssets.kBook),
+                      fit: BoxFit.cover,
+                  ),
               ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Column(
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width /2,
+                  child: const Text(
+                    'Harry Potter and the Goblet of Fire',
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: Styles.textStyle20N,
+                  ),
+                ),
+              ],
             ),
           ),
         ],
