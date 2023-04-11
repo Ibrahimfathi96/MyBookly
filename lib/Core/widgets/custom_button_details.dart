@@ -6,23 +6,25 @@ class CustomDetailsButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: const [
+      children: [
         Expanded(
           child: CustomBookButton(
+            onPressed: (){},
             backGroundColor: Colors.white,
             text: '19.99€',
             textColor: Colors.black,
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(12),
                 bottomLeft: Radius.circular(12)),
           ),
         ),
         Expanded(
           child: CustomBookButton(
-            backGroundColor: Color(0xffEF8262),
+            onPressed: (){},
+            backGroundColor: const Color(0xffEF8262),
             text: 'Free Preview',
             textColor: Colors.white,
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
                 topRight: Radius.circular(12),
                 bottomRight: Radius.circular(12)),
           ),

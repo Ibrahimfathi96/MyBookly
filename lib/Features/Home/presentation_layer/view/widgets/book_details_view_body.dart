@@ -2,6 +2,7 @@ import 'package:bookly/Core/Utils/styles.dart';
 import 'package:bookly/Core/widgets/custom_button_details.dart';
 import 'package:bookly/Features/Home/presentation_layer/view/widgets/book_rating.dart';
 import 'package:bookly/Features/Home/presentation_layer/view/widgets/custom_list_view_item.dart';
+import 'package:bookly/Features/Home/presentation_layer/view/widgets/featured_list_view.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -40,6 +41,11 @@ class BookDetailsViewBody extends StatelessWidget {
           padding: EdgeInsets.only(right: 30, left: 30, top: 30),
           child: CustomDetailsButtons(),
         ),
+        const Padding(
+          padding: EdgeInsets.all(30),
+          child: Text('You can also like',style: Styles.textStyle18,),
+        ),
+        const Expanded(child: FeaturedBooksListView()),
       ],
     );
   }

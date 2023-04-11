@@ -6,20 +6,21 @@ class CustomBookButton extends StatelessWidget {
   final Color textColor ;
   final String text;
   final BorderRadius? borderRadius;
+  final void Function()? onPressed;
 
   const CustomBookButton(
       {Key? key,
         required this.backGroundColor,
         required this.textColor,
         this.borderRadius,
-        required this.text}) : super(key: key);
+        required this.text, this.onPressed}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 48,
       child: TextButton(
-        onPressed: () {},
+        onPressed: onPressed,
         style: TextButton.styleFrom(
             backgroundColor: backGroundColor,
             shape: RoundedRectangleBorder(
@@ -28,7 +29,7 @@ class CustomBookButton extends StatelessWidget {
         child: Text(
           text,
           style: Styles.textStyle18
-              .copyWith(color: textColor, fontWeight: FontWeight.bold),
+              .copyWith(color: textColor, fontWeight: FontWeight.w900),
         ),
       ),
     );
