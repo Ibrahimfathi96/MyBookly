@@ -13,9 +13,9 @@ class BookDetailsView extends StatelessWidget {
         elevation: 0,
         backgroundColor: kPrimaryColor,
         automaticallyImplyLeading: false,
-        title: BookDetailsAppBar(),
+        title: const BookDetailsAppBar(),
       ),
-      body: BookDetailsViewBody(),
+      body: const BookDetailsViewBody(),
     );
   }
 }

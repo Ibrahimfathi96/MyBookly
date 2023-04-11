@@ -4,6 +4,7 @@ import 'package:bookly/Features/Home/presentation_layer/view/widgets/home_view_b
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
+  static const String routeName = '/homeView';
   const HomeView({Key? key}) : super(key: key);
 
   @override

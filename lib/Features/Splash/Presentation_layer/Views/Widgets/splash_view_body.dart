@@ -1,8 +1,7 @@
-import 'package:bookly/Constants.dart';
 import 'package:bookly/Features/Home/presentation_layer/view/home_view.dart';
 import 'package:bookly/Features/Splash/Presentation_layer/Views/Widgets/sliding_text.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../../Core/Utils/AppAssets.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -14,7 +13,6 @@ class SplashViewBody extends StatefulWidget {
 
 class _SplashViewBodyState extends State<SplashViewBody>
     with SingleTickerProviderStateMixin {
-
   late AnimationController animationController;
   late Animation<Offset> slidingAnimation;
 
@@ -25,10 +23,17 @@ class _SplashViewBodyState extends State<SplashViewBody>
   }
 
   void navigateToHome() {
-    Future.delayed(const Duration(seconds: 2),(){
-      Get.to(()=>const HomeView(),transition: Transition.fadeIn,duration:kTransitionDuration );
-    });
+    Future.delayed(const Duration(seconds: 2), () {
+      GoRouter.of(context).push(HomeView.routeName);
+    }
+     /*get package navigation
+      Get.to(() => const HomeView(),
+
+          transition: Transition.fadeIn, duration: kTransitionDuration);
+    },*/
+    );
   }
+
   void initSlidingAnimation() {
     super.initState();
     animationController = AnimationController(
@@ -37,7 +42,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     );
 
     slidingAnimation =
-        Tween<Offset>(begin: const Offset(0, 20), end:Offset.zero)
+        Tween<Offset>(begin: const Offset(0, 20), end: Offset.zero)
             .animate(animationController);
     animationController.forward();
   }
@@ -61,7 +66,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
         const SizedBox(
           height: 12,
         ),
-        SlidingTextWidget(slidingAnimation: slidingAnimation,),
+        SlidingTextWidget(
+          slidingAnimation: slidingAnimation,
+        ),
       ],
     );
   }
