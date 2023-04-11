@@ -19,7 +19,10 @@ class BookDetailsViewBody extends StatelessWidget {
             style: Styles.textStyle18,
           ),
         ),
-        Expanded(child: FeaturedBooksListView()),
+        Expanded(child: Padding(
+          padding: EdgeInsets.only(bottom: 8.0),
+          child: FeaturedBooksListView(),
+        )),
       ],
     );
   }
