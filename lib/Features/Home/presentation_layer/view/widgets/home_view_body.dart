@@ -2,7 +2,6 @@ import 'package:bookly/Core/Utils/styles.dart';
 import 'package:bookly/Features/Home/presentation_layer/view/widgets/best_seller_listview.dart';
 import 'package:bookly/Features/Home/presentation_layer/view/widgets/featured_list_view.dart';
 import 'package:flutter/material.dart';
-import 'best_seller_list_item.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({Key? key}) : super(key: key);
