@@ -22,7 +22,7 @@ class BookDetailsViewBody extends StatelessWidget {
         Expanded(child: Padding(
           padding: EdgeInsets.only(bottom: 8.0),
           child: FeaturedBooksListView(),
-        )),
+        ),),
       ],
     );
   }
