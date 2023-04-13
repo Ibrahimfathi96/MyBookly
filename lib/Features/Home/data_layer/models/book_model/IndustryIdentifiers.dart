@@ -1,3 +1,6 @@
+/// type : "ISBN_10"
+/// identifier : "0201710919"
+
 class IndustryIdentifiers {
   IndustryIdentifiers({
       this.type, 
@@ -7,8 +10,8 @@ class IndustryIdentifiers {
     type = json['type'];
     identifier = json['identifier'];
   }
-  String type;
-  String identifier;
+  String? type;
+  String? identifier;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};

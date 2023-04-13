@@ -1,3 +1,6 @@
+/// smallThumbnail : "http://books.google.com/books/content?id=u13hVoYVZa8C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"
+/// thumbnail : "http://books.google.com/books/content?id=u13hVoYVZa8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+
 class ImageLinks {
   ImageLinks({
       this.smallThumbnail, 
@@ -7,8 +10,8 @@ class ImageLinks {
     smallThumbnail = json['smallThumbnail'];
     thumbnail = json['thumbnail'];
   }
-  String smallThumbnail;
-  String thumbnail;
+  String? smallThumbnail;
+  String? thumbnail;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};

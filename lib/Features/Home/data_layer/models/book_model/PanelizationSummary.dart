@@ -1,3 +1,6 @@
+/// containsEpubBubbles : false
+/// containsImageBubbles : false
+
 class PanelizationSummary {
   PanelizationSummary({
       this.containsEpubBubbles, 
@@ -7,8 +10,8 @@ class PanelizationSummary {
     containsEpubBubbles = json['containsEpubBubbles'];
     containsImageBubbles = json['containsImageBubbles'];
   }
-  bool containsEpubBubbles;
-  bool containsImageBubbles;
+  bool? containsEpubBubbles;
+  bool? containsImageBubbles;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
