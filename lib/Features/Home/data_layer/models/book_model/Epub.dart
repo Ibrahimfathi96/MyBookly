@@ -1,5 +1,3 @@
-/// isAvailable : false
-
 class Epub {
   Epub({
       this.isAvailable,});
@@ -7,7 +5,7 @@ class Epub {
   Epub.fromJson(dynamic json) {
     isAvailable = json['isAvailable'];
   }
-  bool? isAvailable;
+  bool isAvailable;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};

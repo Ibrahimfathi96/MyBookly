@@ -1,6 +1,3 @@
-/// text : false
-/// image : true
-
 class ReadingModes {
   ReadingModes({
       this.text, 
@@ -10,8 +7,8 @@ class ReadingModes {
     text = json['text'];
     image = json['image'];
   }
-  bool? text;
-  bool? image;
+  bool text;
+  bool image;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
