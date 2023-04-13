@@ -7,6 +7,6 @@ abstract class HomeRepo{
   * for example here we want List of book model as a return type
   * but what if the the api call failed? we need another return type to handle this failure here
   * so Either is a good way to handle the error return type*/
-Future<Either<Failure,List<BookModel>>> fetchBestSellerBooks();
+Future<Either<Failure,List<BookModel>>> fetchNewestBooks();
 Future<Either<Failure,List<BookModel>>> fetchFeaturedBooks();
 }
