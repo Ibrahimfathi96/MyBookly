@@ -37,7 +37,9 @@ class BookDetailsSection extends StatelessWidget {
         const SizedBox(
           height: 15,
         ),
-        const Center(child: BooksRating()),
+        const Center(child: BooksRating(
+          rating: 5,count: 5,
+        )),
         const Padding(
           padding: EdgeInsets.only(right: 30, left: 30, top: 30),
           child: CustomDetailsButtons(),

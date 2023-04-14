@@ -1,3 +1,4 @@
+import 'package:bookly/Core/Utils/AppAssets.dart';
 import 'package:flutter/material.dart';
 
 class CustomLoadingIndicator extends StatelessWidget {
@@ -5,6 +6,8 @@ class CustomLoadingIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(child:CircularProgressIndicator(),);
+    return Center(child:
+        Image.asset(AppAssets.kLoading),
+    );
   }
 }

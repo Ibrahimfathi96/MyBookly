@@ -1,9 +1,9 @@
+import 'package:bookly/Features/Home/data_layer/models/book_model/BookModel.dart';
 import 'package:bookly/Features/Home/presentation_layer/view/widgets/best_seller_list_item.dart';
 import 'package:flutter/material.dart';
 
 class SearchBooksResultListView extends StatelessWidget {
   const SearchBooksResultListView({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -14,7 +14,10 @@ class SearchBooksResultListView extends StatelessWidget {
           padding: EdgeInsets.zero,
           itemBuilder: (context, index) => const Padding(
             padding: EdgeInsets.symmetric(vertical: 15.0),
-            child: BestSellerListViewItem(),
+          child: Text(''),
+          //   child: BestSellerListViewItem(
+          //   book,
+          // ),
           ),
         ),
       ),
