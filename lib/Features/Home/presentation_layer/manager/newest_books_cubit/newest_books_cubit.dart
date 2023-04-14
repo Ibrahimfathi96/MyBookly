@@ -3,17 +3,21 @@ import 'package:bookly/Features/Home/data_layer/models/book_model/BookModel.dart
 import 'package:bookly/Features/Home/data_layer/repository/home_repo.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
-part 'featured_books_state.dart';
 
-class FeaturedBooksCubit extends Cubit<FeaturedBooksState> {
-  FeaturedBooksCubit(this.homeRepo) : super(FeaturedBooksInitial());
+part 'newest_books_state.dart';
+
+class NewestBooksCubit extends Cubit<NewestBooksState> {
+
+  NewestBooksCubit(this.homeRepo) : super(NewestBooksInitial());
+
   final HomeRepo homeRepo;
-  Future<void> fetchFeaturedBooks() async {
-    emit(FeaturedBooksLoading());
+
+  Future<void> fetchNewestBooks() async {
+    emit(NewestBooksLoading());
     var result = await homeRepo.fetchFeaturedBooks();
     result.fold(
-      (failure) => emit(FeaturedBooksFailure(failure.errorMessage)),
-      (books) => emit(FeaturedBooksLoaded(books)),
+          (failure) => emit(NewestBooksFailure(failure.errorMessage)),
+          (books) => emit(NewestBooksLoaded(books)),
     );
   }
 }
