@@ -1,3 +1,5 @@
+import 'package:equatable/equatable.dart';
+
 import 'VolumeInfo.dart';
 import 'SaleInfo.dart';
 import 'AccessInfo.dart';
@@ -12,27 +14,32 @@ import 'SearchInfo.dart';
 /// accessInfo : {"country":"EG","viewability":"PARTIAL","embeddable":true,"publicDomain":false,"textToSpeechPermission":"ALLOWED_FOR_ACCESSIBILITY","epub":{"isAvailable":false},"pdf":{"isAvailable":false},"webReaderLink":"http://play.google.com/books/reader?id=u13hVoYVZa8C&hl=&source=gbs_api","accessViewStatus":"SAMPLE","quoteSharingAllowed":false}
 /// searchInfo : {"textSnippet":"In this new book, noted software engineers Kent Beck and Martin Fowler show the reader how to properly plan a software development project with XP in mind."}
 
-class BookModel {
+class BookModel extends Equatable {
   BookModel({
-      this.kind, 
-      this.id, 
-      this.etag, 
-      this.selfLink, 
-      this.volumeInfo, 
-      this.saleInfo, 
-      this.accessInfo, 
-      this.searchInfo,});
+    this.kind,
+    this.id,
+    this.etag,
+    this.selfLink,
+    this.volumeInfo,
+    this.saleInfo,
+    this.accessInfo,
+    this.searchInfo,});
 
   BookModel.fromJson(dynamic json) {
     kind = json['kind'];
     id = json['id'];
     etag = json['etag'];
     selfLink = json['selfLink'];
-    volumeInfo = json['volumeInfo'] != null ? VolumeInfo.fromJson(json['volumeInfo']) : null;
-    saleInfo = json['saleInfo'] != null ? SaleInfo.fromJson(json['saleInfo']) : null;
-    accessInfo = json['accessInfo'] != null ? AccessInfo.fromJson(json['accessInfo']) : null;
-    searchInfo = json['searchInfo'] != null ? SearchInfo.fromJson(json['searchInfo']) : null;
+    volumeInfo =
+    json['volumeInfo'] != null ? VolumeInfo.fromJson(json['volumeInfo']) : null;
+    saleInfo =
+    json['saleInfo'] != null ? SaleInfo.fromJson(json['saleInfo']) : null;
+    accessInfo =
+    json['accessInfo'] != null ? AccessInfo.fromJson(json['accessInfo']) : null;
+    searchInfo =
+    json['searchInfo'] != null ? SearchInfo.fromJson(json['searchInfo']) : null;
   }
+
   String? kind;
   String? id;
   String? etag;
@@ -63,4 +70,6 @@ class BookModel {
     return map;
   }
 
+  @override
+  List<Object> get props => [];
 }
