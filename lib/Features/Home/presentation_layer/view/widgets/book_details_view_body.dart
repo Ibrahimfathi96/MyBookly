@@ -1,6 +1,6 @@
 import 'package:bookly/Core/Utils/styles.dart';
 import 'package:bookly/Features/Home/presentation_layer/view/widgets/book_details_section.dart';
-import 'package:bookly/Features/Home/presentation_layer/view/widgets/featured_list_view.dart';
+import 'package:bookly/Features/Home/presentation_layer/view/widgets/similar_books_list_view.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -19,13 +19,13 @@ class BookDetailsViewBody extends StatelessWidget {
             style: Styles.textStyle18,
           ),
         ),
-        Expanded(child: Padding(
-          padding: EdgeInsets.only(bottom: 8.0),
-          child: FeaturedBooksListView(),
-        ),),
+        Expanded(
+          child: Padding(
+            padding: EdgeInsets.only(bottom: 8.0),
+            child: SimilarBooksListView(),
+          ),
+        ),
       ],
     );
   }
 }
-
-
