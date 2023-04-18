@@ -9,4 +9,5 @@ abstract class HomeRepo{
   * so Either is a good way to handle the error return type*/
 Future<Either<Failure,List<BookModel>>> fetchNewestBooks();
 Future<Either<Failure,List<BookModel>>> fetchFeaturedBooks();
+Future<Either<Failure,List<BookModel>>> fetchSimilarBooks({required String category});
 }
