@@ -6,8 +6,8 @@ class CustomLoadingIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child:
-        Image.asset(AppAssets.kLoading),
+    return const Center(child:
+        CircularProgressIndicator(),
     );
   }
 }

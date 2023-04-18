@@ -40,7 +40,7 @@ class ServerFailure extends Failure{
         }
         return ServerFailure('Unexpected Error, Please try again later.');
       case DioErrorType.unknown:
-        return ServerFailure('Oops!! Unexpected Error, Please try again later.');
+        return ServerFailure('Oops!! Unexpected Error, \nCheck Your connection or Please try again later.');
     }
   }
 }
