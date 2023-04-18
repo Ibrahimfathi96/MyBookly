@@ -1,9 +1,11 @@
 import 'package:bookly/Features/Home/presentation_layer/manager/featured_books_cubit/featured_books_cubit.dart';
+import 'package:bookly/Features/Home/presentation_layer/view/book_details_view.dart';
 import 'package:bookly/Features/Home/presentation_layer/view/widgets/custom_error_widget.dart';
 import 'package:bookly/Features/Home/presentation_layer/view/widgets/custom_list_view_item.dart';
 import 'package:bookly/Features/Home/presentation_layer/view/widgets/custom_loading_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
   const FeaturedBooksListView({Key? key}) : super(key: key);
@@ -16,16 +18,21 @@ class FeaturedBooksListView extends StatelessWidget {
           return SizedBox(
             height: MediaQuery.of(context).size.height * 0.3,
             child: ListView.builder(
+              itemCount: state.books.length,
               physics: const BouncingScrollPhysics(),
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) => Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: FeaturedBooksListViewItem(
-                  imageUrl: state.books[index].volumeInfo!.imageLinks!.thumbnail!,
+                child: GestureDetector(
+                  onTap: (){
+                    GoRouter.of(context).push(BookDetailsView.routeName,extra: state.books[index]);
+                  },
+                  child: FeaturedBooksListViewItem(
+                    imageUrl: state.books[index].volumeInfo?.imageLinks?.thumbnail??'',
+                  ),
                 ),
               ),
-              itemCount: state.books.length,
             ),
           );
         }else if (state is FeaturedBooksFailure){

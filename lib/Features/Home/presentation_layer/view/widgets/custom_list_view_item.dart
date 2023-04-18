@@ -10,7 +10,7 @@ class FeaturedBooksListViewItem extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(16),
       child: AspectRatio(
-        aspectRatio: 2.7/4,//for responsive UI
+        aspectRatio: 2.5/4,//for responsive UI
         child: CachedNetworkImage(
           imageUrl: imageUrl,
           fit: BoxFit.fill,

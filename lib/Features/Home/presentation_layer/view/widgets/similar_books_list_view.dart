@@ -14,7 +14,7 @@ class SimilarBooksListView extends StatelessWidget {
       builder: (context, state) {
         if(state is SimilarBooksSuccess){
           return SizedBox(
-            height: MediaQuery.of(context).size.height * 0.3,
+            height: MediaQuery.of(context).size.height * 0.2,
             child: ListView.builder(
               physics: const BouncingScrollPhysics(),
               shrinkWrap: true,
@@ -23,8 +23,7 @@ class SimilarBooksListView extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: FeaturedBooksListViewItem(
-                      imageUrl: state.books[index].volumeInfo!.imageLinks!
-                          .thumbnail!,
+                      imageUrl: state.books[index].volumeInfo?.imageLinks?.thumbnail??'',
                     ),
                   ),
               itemCount: state.books.length,

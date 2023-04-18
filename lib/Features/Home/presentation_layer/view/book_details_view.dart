@@ -32,7 +32,9 @@ class _BookDetailsViewState extends State<BookDetailsView> {
         automaticallyImplyLeading: false,
         title: const BookDetailsAppBar(),
       ),
-      body: const BookDetailsViewBody(),
+      body: BookDetailsViewBody(
+        bookModel: widget.bookModel,
+      ),
     );
   }
 }
